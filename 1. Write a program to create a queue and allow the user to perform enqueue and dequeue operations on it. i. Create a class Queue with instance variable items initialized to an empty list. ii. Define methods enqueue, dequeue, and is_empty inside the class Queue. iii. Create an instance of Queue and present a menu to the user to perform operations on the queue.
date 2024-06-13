@@ -1,0 +1,37 @@
+class q:
+  def __init__(self):
+    self.items = []
+
+  def enq(self, item):
+    self.items.insert(0,item)
+
+  def deq(self):
+    if not self.is_empty():
+      return self.items.pop()
+    else:
+      return "Queue is empty."
+
+  def is_empty(self):
+    return len(self.items) == 0
+
+def queue():
+  Q = q()
+  while True:
+    print("\nQueue Operations Menu:")
+    print("1. Enqueue")
+    print("2. Dequeue")
+    print("3. Exit")
+    choice = input("Enter your choice (1/2/3): ")
+    if choice == "1":
+      item = input("Enter an item to push onto the queue: ")
+      Q.enq(item)
+      print(f"{item} has been pushed onto the queue.")
+    elif choice == "2":
+      dequeued_item = Q.deq()
+      print(f"Popped item: {dequeued_item}")
+    elif choice == "3":
+      print("Exiting the program.")
+      break
+    else:
+      print("Invalid choice. Please select a valid option.")
+w=queue()
