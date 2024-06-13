@@ -1,0 +1,39 @@
+class q:
+  def __init__(self):
+    self.items = []
+
+  def enq(self, item):
+    self.items.insert(0,item)
+
+  def deq(self):
+    if not self.is_empty():
+      return self.items.pop()
+    else:
+      return "Queue is empty."
+
+  def is_empty(self):
+    return len(self.items) == 0
+
+def queue():
+  Q = q()
+  while True:
+    print("\n Ride Queue Menu:")
+    print("1. Ride Entry")
+    print("2. Ride exit")
+    print("3. Exit")
+    choice = input("Enter your choice (1/2/3): ")
+    if choice == "1":
+      item = input("Enter the first person: ")
+      Q.enq(item)
+      print(f"{item} is in the queue.")
+      print(Q.items)
+    elif choice == "2":
+      dequeued_item = Q.deq()
+      print(f"Thankyou : {dequeued_item}")
+      print(Q.items)
+    elif choice == "3":
+      print("Exiting park menu.")
+      break
+    else:
+      print("Invalid choice. Please select a valid option.")
+w=queue()
